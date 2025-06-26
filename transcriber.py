@@ -30,7 +30,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
 # --- Constants ---
-MAX_FILE_COUNT = 53 # From the 'If' node condition
+MAX_FILE_COUNT = 53 
 SUPABASE_TABLE_NAME = "propE_transcriber"
 SUPABASE_STORAGE_BUCKET = "prope.transcriberaudio"
 
@@ -63,7 +63,7 @@ def run_transcriber_workflow():
         logging.error(f"Error fetching recordings from PropEquity API: {e}")
         return
 
-    # 4. Get existing file_ids from Supabase (Supabase node)
+    # 4. Get existing file_ids from Supabase
     try:
         response = supabase.table(SUPABASE_TABLE_NAME).select("file_id").execute()
         existing_supabase_file_ids = {item['file_id'] for item in response.data}
@@ -97,7 +97,7 @@ def run_transcriber_workflow():
         logging.info(f"Processing file_id: {file_id}")
 
         try:
-            # 6.1. Save metadata to Supabase (prope_transcriber_savefileid)
+            # 6.1. Save metadata to Supabase
             supabase.table(SUPABASE_TABLE_NAME).insert({
                 "file_id": file_id,
                 "project_id": project_id,
@@ -131,7 +131,7 @@ def run_transcriber_workflow():
 
             # 6.4. Make signed URL token (make-signedURL-token)
             # Supabase storage doesn't directly return a signed URL on upload.
-            # We need to generate it separately.
+            # We will  generate it separately.
             signed_url_response = supabase.storage.from_(SUPABASE_STORAGE_BUCKET).create_signed_url(
                 path=storage_path,
                 expires_in=3600 # 1 hour
