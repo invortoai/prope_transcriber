@@ -33,5 +33,5 @@ Follow these steps to get the project up and running on your local machine.
 First, clone this GitHub repository to your local machine:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME # Replace with your actual repository name (e.g., prope-transcriber )
+git clone https://github.com/invortoai/prope_transcriber.git
+cd prope_transcriber
