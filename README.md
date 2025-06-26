@@ -11,6 +11,7 @@ Get Following before cloning the repo:
     *   A table named 'propE_transcriber' with columns file_id which will be the primary key, project_id, file_extension, recording, transcriptData, callback_response. Keep all columns nullable except primary.
     *   A storage bucket named `prope.transcriberaudio`.
     *   Your Supabase Project URL and Anon Key.
+*   Python 3.8+ required
 
 ## When creating `.env` file 
 
