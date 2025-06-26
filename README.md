@@ -20,7 +20,7 @@ Before you begin, ensure you have the following:
 *   **Git** installed.
 *   An **OpenAI API Key**.
 *   A **Supabase Project** with:
-    *   A table named `propE_transcriber` (you'll need to create this).
+    *   A table named propE_transcriber
     *   A storage bucket named `prope.transcriberaudio` (you'll need to create this).
     *   Your Supabase Project URL and Anon Key.
 
