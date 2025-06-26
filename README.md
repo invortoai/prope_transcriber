@@ -11,3 +11,11 @@ Get Following before cloning the repo:
     *   A table named 'propE_transcriber' with columns file_id which will be the primary key, project_id, file_extension, recording, transcriptData, callback_response. Keep all columns nullable except primary.
     *   A storage bucket named `prope.transcriberaudio`.
     *   Your Supabase Project URL and Anon Key.
+
+## When creating `.env` file 
+
+    SUPABASE_URL="YOUR_SUPABASE_PROJECT_URL"
+    SUPABASE_KEY="YOUR_SUPABASE_ANON_KEY"
+    OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+    PROPEQUITY_API_BASE_URL="https://mriapi.propequity.in:8290/api/Recording"
+    SUPABASE_STORAGE_URL="https://YOUR_PROJECT.supabase.co/storage/v1"
